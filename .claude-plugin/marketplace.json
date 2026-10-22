@@ -1,0 +1,16 @@
+{
+  "name": "geenuga",
+  "description": "The Geenuga plugin: your home and car search with your own assistant.",
+  "owner": {
+    "name": "Geenuga",
+    "email": "supporto@geenuga.com",
+    "url": "https://geenuga.com"
+  },
+  "plugins": [
+    {
+      "name": "geenuga",
+      "source": "./",
+      "description": "Geenuga already connected (https://mcp.geenuga.com) plus skills to search homes and cars, analyse listings, spot scams and compare costs and mortgages."
+    }
+  ]
+}
