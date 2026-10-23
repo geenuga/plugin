@@ -1,15 +1,15 @@
 # Outside Italy: the portals of the family's country
 
-Every family has a **country** (set in their Geenuga account, or with `casa_imposta_paese` when they ask you). It
+Every family has a **country** (set in their Geenuga account, or with `home_set_country` when they ask you). It
 decides **where** you search: portals, price sources, official car checks. Italy is fully supported; the other countries
 are in beta.
 
 ## Where to start
 
-- `casa_situazione` → `mercato` (country, currency, status).
-- `casa_leggi_ricerche` → `portali` (the portals of the country, with the family's search links and notes) and
+- `home_overview` → `mercato` (country, currency, status).
+- `home_searches` → `portali` (the portals of the country, with the family's search links and notes) and
   `fontiPrezzi` (where to look up area prices).
-- `auto_leggi_ricerche` → the car sites, the price sources and the official checks of the country.
+- `car_searches` → the car sites, the price sources and the official checks of the country.
 
 ## Rules
 
@@ -17,7 +17,7 @@ are in beta.
   round.
 - **Search URLs**: there are no written patterns as for Italy. Set the filters in the site's interface, read the URL
   the site generates, check title, number of results and cards, then save it on the portal with
-  `casa_imposta_portale` (`urlRicerca`): next time you start from there.
+  `home_set_portal` (`searchUrl`): next time you start from there.
 - **The web rules are the same everywhere** ([web-rules.md](web-rules.md)). Many foreign portals ask for cookie
   consent: always refuse the non-essential cookies.
 - **Area prices**: from the country's sources, official ones first (DVF in France, Land Registry in the UK, Notariado

@@ -2,9 +2,9 @@
 
 Geenuga runs its own check on every home you save (price far below the area without a reason, deposits before the
 viewing, untraceable payments, keys sent by courier, escrow, OTP and identity credentials, seller abroad, WhatsApp only,
-premium-rate or foreign numbers, agency without a name). You add your judgement: `rischioTruffa` (`basso` / `medio` /
+premium-rate or foreign numbers, agency without a name). You add your judgement: `scamRisk` (`basso` / `medio` /
 `alto`) and `redFlags` (short phrases in the family's language). Geenuga keeps the higher of the two risks, and homes
-with a high risk are not saved (unless the family explicitly asks: `ancheSeSospette`).
+with a high risk are not saved (unless the family explicitly asks: `includeSuspicious`).
 
 ## Recurring schemes
 

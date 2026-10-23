@@ -1,7 +1,7 @@
 # Geenuga Auto: sites, details, checks, scams
 
 The real monthly cost, road tax, ownership transfer, APR and the checks that follow from the data are computed by
-Geenuga's code (`auto_scheda`, `auto_costi`, `auto_confronta`, `auto_offerte`). Here is what you look at yourself.
+Geenuga's code (`car_details`, `car_costs`, `car_compare`, `car_offers`). Here is what you look at yourself.
 Italian rules checked in October 2026; for other countries see [other-countries.md](other-countries.md).
 
 ## Sites in Italy
@@ -17,7 +17,7 @@ Italian rules checked in October 2026; for other countries see [other-countries.
 | Facebook Marketplace | Private sellers nearby | fake profiles: only in person, only links the family gives you |
 | AutoUncle, Quattroruote | Market price and valuations | not for buying |
 
-The family's sites are in `auto_leggi_ricerche`. Human pace, one page at a time; stop at CAPTCHAs or login walls
+The family's sites are in `car_searches`. Human pace, one page at a time; stop at CAPTCHAs or login walls
 ([web-rules.md](web-rules.md)).
 
 ## What to collect
@@ -26,10 +26,10 @@ Title, link and listing id, who sells (private, dealer, rental) with name and to
 used; registration year and month; km; price and whether it is negotiable; fuel, gearbox, body; **power in kW** (if
 only in hp, `cv`); engine size, doors, seats; kerb weight (for new drivers); Euro class; declared combined consumption
 (l/100 km, or kWh/100 km), range and battery; owners; documented services; accidents; warranty; useful equipment;
-description; large photos. Follow the input schema of `auto_salva`.
+description; large photos. Follow the input schema of `car_save`.
 
-Then what you add: `prezzoMercato` and `fonteMercato`, `redFlags`, `rischioTruffa`, `domande` (questions for the
-seller), `analisi`.
+Then what you add: `marketPrice` and `marketSource`, `redFlags`, `scamRisk`, `questions` (questions for the
+seller), `analysis`.
 
 ## Market price
 

@@ -8,71 +8,71 @@ argument-hint: "[cerca [search] | analizza [link] | aggiorna | conti | pagamento
 
 Request: $ARGUMENTS
 
-You work only through the Geenuga tools (`auto_…`) and the browser. Reply in the user's language; analyses, questions
+You work only through the Geenuga tools (`car_…`) and the browser. Reply in the user's language; analyses, questions
 for the seller and notes go in that same language (messages for Italian sellers, when the family says yes to sending
 them, in Italian).
 
 References: [cars.md](../../references/cars.md) (sites, details, checks, scams), [web-rules.md](../../references/web-rules.md),
 [other-countries.md](../../references/other-countries.md) (outside Italy).
 
-**Always start from `auto_situazione`**: how they use the car (km, kind of roads, years, budget, new drivers), the
+**Always start from `car_overview`**: how they use the car (km, kind of roads, years, budget, new drivers), the
 searches, the links to analyse, the listings to check again, the best ones. If Geenuga Auto is not active
-(`geenuga_prodotti`), say so (it is activated from the Geenuga account) and stop. If how they use the car is missing,
-ask them and save it with `auto_imposta_profilo`: only what they tell you.
+(`geenuga_products`), say so (it is activated from the Geenuga account) and stop. If how they use the car is missing,
+ask them and save it with `car_set_profile`: only what they tell you.
 
 **The country first**: in Italy the sites and checks of [cars.md](../../references/cars.md) apply; in another country
-`auto_leggi_ricerche` gives the sites, the price sources and the official checks of that country, and Italian road tax,
+`car_searches` gives the sites, the price sources and the official checks of that country, and Italian road tax,
 ownership transfer and new-driver rules do not apply.
 
 ## cerca [name of the search]
 
-1. `auto_leggi_ricerche` (with `nome` if given) → criteria and price cap for the portals. If the search is empty (no
-   models, price, fuels), ask the family what they are looking for and save it with `auto_imposta_ricerca` before
+1. `car_searches` (with `name` if given) → criteria and price cap for the portals. If the search is empty (no
+   models, price, fuels), ask the family what they are looking for and save it with `car_set_search` before
    starting.
 2. With the browser, one site at a time, only among the family's country sites. Filters: models, price, km, year, fuel,
    gearbox, area and radius. Sort by most recent.
-3. `auto_gia_visti` with the links of the result list before opening the listings: skip the cars already in Geenuga.
+3. `car_known_links` with the links of the result list before opening the listings: skip the cars already in Geenuga.
 4. For each candidate: open the listing, collect the data ([cars.md](../../references/cars.md), "What to collect"), then
-   the **market price**: 5–15 identical listings from the country's price sources → median in `prezzoMercato`, and
-   where from in `fonteMercato`.
-5. Save only the ones worth it: `auto_salva` (up to 10 per call, `ricerca` = the name) with data, market price,
-   `domande` for the seller, `redFlags` if you see any. Outcomes: created, already saved (updated), possible duplicate,
+   the **market price**: 5–15 identical listings from the country's price sources → median in `marketPrice`, and
+   where from in `marketSource`.
+5. Save only the ones worth it: `car_save` (up to 10 per call, `cars`, with `search` = the name) with data, market price,
+   `questions` for the seller, `redFlags` if you see any. Outcomes: created, already saved (updated), possible duplicate,
    discarded as a scam (not saved: that is fine).
-6. `auto_salva_foto` for each car created; `auto_aggiorna_scheda` with the `analisi` for the best ones.
-7. `auto_registra_giro`, always, even with nothing new or a site that blocked you, with a short summary.
-8. In the chat: the 3–5 best with price, real monthly cost (from `auto_scheda` or `auto_elenco`), what sets them apart,
+6. `car_save_photos` for each car created; `car_update` with the `analysis` in `data` for the best ones.
+7. `car_log_search_run`, always, even with nothing new or a site that blocked you, with a short summary.
+8. In the chat: the 3–5 best with price, real monthly cost (from `car_details` or `car_list`), what sets them apart,
    the doubts, the `nellApp` links.
 
 ## analizza [link]
 
-- With a link: `auto_gia_visti`; if it is already there, update that car (`auto_aggiorna_scheda`), otherwise
-  `auto_salva`.
-- Without a link: the links to analyse in `auto_situazione` (pasted by the family, with their note). Complete each one
-  with `auto_aggiorna_scheda`: the status moves to «da valutare» by itself.
+- With a link: `car_known_links`; if it is already there, update that car (`car_update`), otherwise
+  `car_save`.
+- Without a link: the links to analyse in `car_overview` (pasted by the family, with their note). Complete each one
+  with `car_update`: the status moves to «da valutare» by itself.
 - Read the whole listing, find the market price, do the checks of [cars.md](../../references/cars.md) ("Checks", "Scam
   signs"). Search the web for a phrase of the description or the plate if visible: listings copied elsewhere are a
   strong sign.
-- The `analisi` (with `auto_aggiorna_scheda`): verdict (worth a call? a test drive?), price against the market, real
-  monthly cost (`auto_scheda`), strengths, doubts, what to check in person, and whether it suits a new driver when
+- The `analysis` (with `car_update`, inside `data`): verdict (worth a call? a test drive?), price against the market, real
+  monthly cost (`car_details`), strengths, doubts, what to check in person, and whether it suits a new driver when
   needed.
 
 ## aggiorna
 
-For the listings to check again in `auto_situazione`: open the listing; record it with `auto_annuncio_ricontrollato`
+For the listings to check again in `car_overview`: open the listing; record it with `car_listing_checked`
 (`online` and today's price if it changed). Tell the family about price drops.
 
 ## conti
 
-`auto_elenco` and `auto_confronta`: compare the candidates on the **real monthly cost** (not on the price) and explain
+`car_list` and `car_compare`: compare the candidates on the **real monthly cost** (not on the price) and explain
 simply where the differences come from (consumption, road tax, value lost). To compare fuels before searching:
-`auto_costi` with hypothetical data. Km, years and energy prices change only if the family asks
-(`auto_imposta_profilo`).
+`car_costs` with hypothetical `data`. Km, years and energy prices change only if the family asks
+(`car_set_profile`).
 
 ## pagamento
 
 Quotes and loan information sheets (in Italy SECCI) the family gives you: read monthly payment, term, down payment,
-balloon, TAN, TAEG, fees, bundled insurance, rental km and what is included; save with `auto_salva_offerta` (corrections
-with `auto_aggiorna_offerta`). `auto_offerte` puts them side by side (all-in monthly cost, recomputed APR, signs).
+balloon, TAN, TAEG, fees, bundled insurance, rental km and what is included; save with `car_save_offer` (corrections
+with `car_update_offer`). `car_offers` puts them side by side (all-in monthly cost, recomputed APR, signs).
 Explain the choice honestly: with the cash available, paying at once often costs less; long-term rental suits who wants
 zero worries, not who drives many km.
 

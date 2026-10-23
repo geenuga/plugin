@@ -1,7 +1,7 @@
 {
   "name": "geenuga",
   "displayName": "Geenuga",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Find your home and your car with your own assistant: Geenuga connects Claude to your Geenuga account (homes, searches, budget, mortgage, cars) and adds skills to search the portals, analyse a listing, spot scams and compare real costs.",
   "author": {
     "name": "Geenuga",

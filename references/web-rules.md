@@ -30,7 +30,7 @@ and Geenuga's tools do the rest (duplicates, scam check, costs, travel times, hi
   manager is connected, the family still approves every item.
 - **CAPTCHA, "verify you are human", device checks, login walls, 401/403/429 errors: stop** on that site, tell the
   family, do not retry in a loop and do not try to solve or work around them. Note the block in the search round log
-  (`blocchi` of `casa_registra_giro`, or the summary of `auto_registra_giro`) and move on to the next site.
+  (`blocks` of `home_log_search_run`, or the summary of `car_log_search_run`) and move on to the next site.
 - **No action towards third parties without an explicit yes in the chat**: no messages to advertisers, sellers, agencies
   or banks, no viewing requests, no forms, no saved searches or alerts on the portals, no "hide listing", no joining
   groups, no personal data typed into any site. **Never any payment.** At most, prepare the message and let the family

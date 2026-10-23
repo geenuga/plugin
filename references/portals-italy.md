@@ -1,15 +1,15 @@
 # Italian property portals: how to search
 
-Use this only when the family's country is Italy (`casa_situazione` → `mercato`). For any other country see
+Use this only when the family's country is Italy (`home_overview` → `mercato`). For any other country see
 [other-countries.md](other-countries.md).
 
 The patterns below are shortcuts, checked in October 2026. After every page load **check the title, the number of
 results and the cards**: if a filter had no effect, set it from the site's interface and read the URL the site
-generates. When a search URL works, save it on the portal with `casa_imposta_portale` (`urlRicerca`): next time you
-start from there. A saved `urlRicerca` (in `casa_leggi_ricerche` → `portali`) always wins over these patterns. Respect
+generates. When a search URL works, save it on the portal with `home_set_portal` (`searchUrl`): next time you
+start from there. A saved `urlRicerca` (in `home_searches` → `portali`) always wins over these patterns. Respect
 the `note` the family wrote on each portal.
 
-Always sort by **most recent** and stop when you meet listings already in Geenuga (`casa_gia_visti`).
+Always sort by **most recent** and stop when you meet listings already in Geenuga (`home_known_links`).
 
 ## Summary (for sale)
 
@@ -64,13 +64,13 @@ Tecnocasa `https://www.tecnocasa.it/annunci/immobili/<regione>/<provincia>/<comu
 Professionecasa `https://www.professionecasa.it/vendita/casa/<comune>?uso=abitativo`. Condominium fees are often
 yearly there: divide by 12.
 
-### Auctions (only if the search has `includiAste`)
+### Auctions (only if the search has `includeAuctions`)
 
 The official source is the PVP of the Ministry of Justice (`pvp.giustizia.it`), plus astegiudiziarie.it. Different
 procedure (online offer with PEC and digital signature, no warranty for defects, often occupied). No intermediary is
 needed; the deposit goes only to the account in the notice of sale. The offer form has a captcha: you stop there.
 
-## For rent (searches with `contratto` = `affitto`)
+## For rent (searches with `contract` = `affitto`)
 
 Same portals and rules; the price is the **monthly rent**.
 
@@ -86,16 +86,16 @@ Same portals and rules; the price is the **monthly rent**.
   out, never book or pay.
 - Short lets (Airbnb, Booking) are not homes to search; a long-term listing that sends you there to "view" or "pay" is
   the fake-landlord scam ([scams.md](scams.md)).
-- Agencies ask the tenant for a commission too: record it (`provvigioneMesi`), do not discard homes only for this.
+- Agencies ask the tenant for a commission too: record it (`commissionMonths`), do not discard homes only for this.
 
 ## The same property on several portals
 
 Compare municipality and street, m² ±5%, rooms, floor, energy class, fees, price ±5%, the agency reference code,
 distinctive phrases of the description, cover photo and floor plan. Geenuga flags the likely duplicates itself
-(`possibile_doppione` in `casa_salva`); when it is the same home, link the other listing with `casa_aggiorna_annuncio`
-(`altroAnnuncio`) and point out price differences above 3–5% or "private" on one portal and "agency" on another.
+(`possibile_doppione` in `home_save`); when it is the same home, link the other listing with `home_listing_checked`
+(`otherListing`) and point out price differences above 3–5% or "private" on one portal and "agency" on another.
 
 ## No price
 
 "Trattativa riservata", "Prezzo su richiesta": estimate m² × area €/m² and write it in the analysis as **estimated**
-(not in `prezzo`). "Da …" / "a partire da" usually means an auction or a new development: flag it.
+(not in `price`). "Da …" / "a partire da" usually means an auction or a new development: flag it.

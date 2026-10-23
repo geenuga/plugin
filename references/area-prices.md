@@ -1,15 +1,15 @@
 # Area prices (€/m²)
 
-They fill `prezzoMqZona` when you save a home, and Geenuga uses them for the comparison with the area and the scam check
+They fill `areaPricePerSqm` when you save a home, and Geenuga uses them for the comparison with the area and the scam check
 (more than 15% above the area: expensive; more than 30% below without a reason: suspicious). For a home **for rent** the
 value is €/m² **per month** (one decimal, e.g. 11.5).
 
-The sources of the family's country are in `casa_leggi_ricerche` → `fontiPrezzi`: use those. In the analysis always
+The sources of the family's country are in `home_searches` → `fontiPrezzi`: use those. In the analysis always
 write which source you used and of which month.
 
 ## Italy
 
-1. **Immobiliare.it Insights** (free, monthly), first choice for `prezzoMqZona`:
+1. **Immobiliare.it Insights** (free, monthly), first choice for `areaPricePerSqm`:
    municipality `https://www.immobiliare.it/mercato-immobiliare/<regione>/<comune>/`, area
    `/<regione>/<comune>/<zona>/`. These are asking prices, not sale prices. It also has rents.
 2. **Idealista price reports** (free, monthly):
@@ -24,6 +24,6 @@ write which source you used and of which month.
 ## How to use them
 
 1. Use the figure for the **area** if there is one, otherwise the municipality.
-2. Put in `prezzoMqZona` the portals' average for the area: it is the most consistent comparison with an asking price.
+2. Put in `areaPricePerSqm` the portals' average for the area: it is the most consistent comparison with an asking price.
 3. In the analysis also give the OMI range when you looked it up.
 4. Once you have the figure for an area, reuse it for every home of that area in the session.

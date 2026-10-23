@@ -6,7 +6,7 @@ Claude or ChatGPT to your Geenuga account and gives it the skills to do the legw
 
 - **The Geenuga server, already configured**: `https://mcp.geenuga.com` (OAuth, you sign in with your Geenuga account).
   No address to type by hand.
-- **Skills** that work only through the Geenuga tools (`casa_…`, `auto_…`, `geenuga_…`) and the browser you already use.
+- **Skills** that work only through the Geenuga tools (`home_…`, `car_…`, `geenuga_…`) and the browser you already use.
 
 You need a Geenuga account (https://geenuga.com). The tools only see the data of the family you sign in with.
 
