@@ -14,7 +14,7 @@ References: [web-rules.md](../../references/web-rules.md); the portals of the fa
 
 `home_list` (the homes still in the running, with link, price and status). Consider the ones with a link, not
 discarded or bought. Priority: favourites and those with a viewing or an offer, then the others, oldest check first
-(`home_overview` → `daFare.daRicontrollare` says how many have not been checked for a week). Homes for rent first:
+(`home_overview` → `toDo.toRecheck` says how many have not been checked for a week). Homes for rent first:
 rental listings disappear in a few days. At most ~30 listings per session: if there are more, do the most important
 ones and say so.
 
@@ -25,6 +25,9 @@ ones and say so.
    `home_listing_checked` with `online: false`.
 3. **Still online**: read the price and record the check with `home_listing_checked` (`online: true` and the
    `price` you see now: if it changed, the history keeps the previous one). Note the change for the report.
+   **Missing photos?** If the listing has more photos than the home in Geenuga (up to 100 are kept), send with
+   `home_update` in `photos` the photos already saved (Geenuga's links from `home_details`, as they are) followed by
+   the missing ones, then `home_save_photos`: it copies only the new ones.
 4. Relevant changes (description, photos, "negotiation in progress", "under offer"): read the current analysis with
    `home_details`, then rewrite it with `home_update` (`analysis`) adding an "Update of <date>" section.
 
@@ -43,4 +46,4 @@ If there are important drops on the favourites, also leave a message in the app 
 - **Trilocale in Bolognina**: 299.000 € → 285.000 € (−4,7%)
 ```
 
-Write the message in the family's language, with the `nellApp` links Geenuga returns.
+Write the message in the family's language, with the `appLink` links Geenuga returns.

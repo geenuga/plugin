@@ -14,14 +14,14 @@ is in that same language.
 References: [web-rules.md](../../references/web-rules.md), [listing-terms.md](../../references/listing-terms.md),
 [scams.md](../../references/scams.md), [area-prices.md](../../references/area-prices.md),
 [portals-italy.md](../../references/portals-italy.md) (Italy) or
-[other-countries.md](../../references/other-countries.md) (any other country: `home_overview` → `mercato`).
+[other-countries.md](../../references/other-countries.md) (any other country: `home_overview` → `market`).
 
 ## 1. Which listings
 
 - **With a link**: `home_known_links` with that link. If it is already in Geenuga you will update that home
   (`home_update` with its id); otherwise you will create it at the end with `home_save`.
-- **Without a link**: `home_overview` → `daFare.linkDaAnalizzare`: links the family pasted in the app (status «da
-  analizzare»). Analyse them one by one; each one already has an id.
+- **Without a link**: `home_overview` → `toDo.linksToAnalyze`: links the family pasted in the app (status
+  `to_analyze`). Analyse them one by one; each one already has an id.
 - **Pasted text, no link**: analyse the text; save it only if the family wants.
 
 ## 2. Read the listing
@@ -33,13 +33,13 @@ listing no longer exists, say so (for a home already in Geenuga: `home_listing_c
 If it is an auction, bare ownership, a share or a rent-to-buy, say it clearly at once
 ([listing-terms.md](../../references/listing-terms.md)).
 
-**For rent?** If the listing is a rental (monthly rent), save it with `contract: "affitto"`, `price` = monthly rent
+**For rent?** If the listing is a rental (monthly rent), save it with `contract: "rent"`, `price` = monthly rent
 and the rental fields (lease type, furnished, deposit, commission, fees included, available from). Use the rental part
 of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
 
 ## 3. Comparisons and checks
 
-1. **€/m² against the area** ([area-prices.md](../../references/area-prices.md)) → `areaPricePerSqm`.
+1. **€/m² against the area** ([area-prices.md](../../references/area-prices.md)) → `areaPricePerSqm` (portal average), plus the **official values** from `home_zone_prices` with `homeId` (official range of the zone and the town's trend); if you know the official zone, save it in `priceZone`.
 2. **Your anti-scam judgement** ([scams.md](../../references/scams.md)) → `scamRisk`, `redFlags`. Search the web
    for a distinctive phrase of the description to find copies in other cities or with other prices. Geenuga adds its
    own check and keeps the higher risk.
@@ -50,10 +50,10 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
 
 ## 4. Save
 
-- New home: `home_save` with all the data, the photos and the `analysis`. If Geenuga answers `scartata_truffa`, it
+- New home: `home_save` with all the data, the photos and the `analysis`. If Geenuga answers `discarded_scam`, it
   was not saved: tell the family why, and save it anyway (`includeSuspicious`) only if they explicitly ask.
-- Home already in Geenuga or «da analizzare»: `home_update` with its id, the fields found (`fields`) and the
-  `analysis` (the status moves from «da analizzare» to «da valutare» by itself).
+- Home already in Geenuga or `to_analyze`: `home_update` with its id, the fields found (`fields`) and the
+  `analysis` (the status moves from `to_analyze` to `new` by itself).
 - The analysis follows the structure in [listing-terms.md](../../references/listing-terms.md): concrete and honest,
   with the **questions to ask** the agency or the owner and what to ask to see (energy certificate, floor plan,
   condominium fees and minutes, title of provenance).
@@ -64,7 +64,7 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
 ## 5. Answer
 
 In the chat, a few lines: the verdict (worth a viewing? yes / no / maybe, and why), the real cost (from `home_details`),
-the 2–3 main doubts, the risk level and the `nellApp` link. If the risk is high: never send money or documents, and
+the 2–3 main doubts, the risk level and the `appLink` link. If the risk is high: never send money or documents, and
 which checks to do. For rent, always: no payment before having seen the home and read the contract.
 
 If the link came from a request of the family (`home_requests`), close it with `home_answer_request`, summarising

@@ -26,7 +26,7 @@ Title, link and listing id, who sells (private, dealer, rental) with name and to
 used; registration year and month; km; price and whether it is negotiable; fuel, gearbox, body; **power in kW** (if
 only in hp, `cv`); engine size, doors, seats; kerb weight (for new drivers); Euro class; declared combined consumption
 (l/100 km, or kWh/100 km), range and battery; owners; documented services; accidents; warranty; useful equipment;
-description; large photos. Follow the input schema of `car_save`.
+description; all the large photos (up to 100), not just the first few. Follow the input schema of `car_save`.
 
 Then what you add: `marketPrice` and `marketSource`, `redFlags`, `scamRisk`, `questions` (questions for the
 seller), `analysis`.

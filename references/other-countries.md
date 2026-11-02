@@ -6,9 +6,9 @@ are in beta.
 
 ## Where to start
 
-- `home_overview` → `mercato` (country, currency, status).
-- `home_searches` → `portali` (the portals of the country, with the family's search links and notes) and
-  `fontiPrezzi` (where to look up area prices).
+- `home_overview` → `market` (country, currency, status).
+- `home_searches` → `portals` (the portals of the country, with the family's search links and notes) and
+  `priceSources` (where to look up area prices).
 - `car_searches` → the car sites, the price sources and the official checks of the country.
 
 ## Rules

@@ -37,7 +37,7 @@ history, viewings, both partners' notes. To put the best side by side: `home_com
 
 In the chat, with this structure (short headings, short sentences):
 1. **Where you are** (2–3 reassuring and true sentences).
-2. **Your best options** (at most 3, with the why and the weak point of each, and the `nellApp` link).
+2. **Your best options** (at most 3, with the why and the weak point of each, and the `appLink` link).
 3. **Watch out for** (risks or figures not to underestimate).
 4. **Next 3 steps**, concrete and in order.
 

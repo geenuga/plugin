@@ -88,5 +88,5 @@ Rules that are not negotiable (see also [web-rules.md](../../references/web-rule
 ## 3. Report
 
 In the chat, short: what you did, the best offer (monthly payment and total cost), one risk to keep an eye on, the next
-step, the `nellApp` link to the mortgage page. If the request came from the app (`home_requests`), answer there with
+step, the `appLink` link to the mortgage page. If the request came from the app (`home_requests`), answer there with
 `home_answer_request`.
