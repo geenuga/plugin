@@ -11,7 +11,7 @@ Link given (may be empty): $ARGUMENTS
 You work only through the Geenuga tools (`home_…`) and the browser. Reply in the user's language; the analysis you save
 is in that same language.
 
-References: [web-rules.md](../../references/web-rules.md), [listing-terms.md](../../references/listing-terms.md),
+References: [photos.md](../../references/photos.md) (the photos one by one), [web-rules.md](../../references/web-rules.md), [listing-terms.md](../../references/listing-terms.md),
 [scams.md](../../references/scams.md), [area-prices.md](../../references/area-prices.md),
 [portals-italy.md](../../references/portals-italy.md) (Italy) or
 [other-countries.md](../../references/other-countries.md) (any other country: `home_overview` → `market`).
@@ -54,17 +54,26 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
   was not saved: tell the family why, and save it anyway (`includeSuspicious`) only if they explicitly ask.
 - Home already in Geenuga or `to_analyze`: `home_update` with its id, the fields found (`fields`) and the
   `analysis` (the status moves from `to_analyze` to `new` by itself).
+- **Trophies**: for each trophy written by hand in the searches (`trophies` with no `feature` in `home_searches`) that
+  the listing lets you tell, pass `trophyChecks` (`{"Bedroom on the ground floor": true}`, `false` if it surely does not
+  have it). What the listing does not say stays out («to check») and goes among the questions to ask.
 - The analysis follows the structure in [listing-terms.md](../../references/listing-terms.md): concrete and honest,
   with the **questions to ask** the agency or the owner and what to ask to see (energy certificate, floor plan,
   condominium fees and minutes, title of provenance).
-- Photos: `home_save_photos` with the id.
+- Photos: `home_save_photos` with the id (the portal's floor plans go in `floorPlans` when you save the home).
+- **The photos one by one** with [photos.md](../../references/photos.md), when the family's preferences ask for it
+  (`home_overview` → `assistantPreferences.photos`: `all`, or `best` for a home that looks like one of the best):
+  `home_photos`, look at every photo and every
+  floor plan, then `home_save_photo_analysis`. What doesn't add up (floor plan against m² and bedrooms, real state
+  against «ristrutturato», a terrace never photographed, photos of another home) also goes in the analysis, with the
+  questions to ask at the viewing.
 - Then `home_details` with the id: it gives the real costs computed by Geenuga (cash needed, monthly payment and costs;
   for rent the money to move in and the monthly spend), the comparison with the area, the match and the driving times.
 
 ## 5. Answer
 
 In the chat, a few lines: the verdict (worth a viewing? yes / no / maybe, and why), the real cost (from `home_details`),
-the 2–3 main doubts, the risk level and the `appLink` link. If the risk is high: never send money or documents, and
+the 2–3 main doubts, what the photos tell (what they confirm, what doesn't add up), the risk level and the `appLink` link. If the risk is high: never send money or documents, and
 which checks to do. For rent, always: no payment before having seen the home and read the contract.
 
 If the link came from a request of the family (`home_requests`), close it with `home_answer_request`, summarising

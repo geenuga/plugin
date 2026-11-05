@@ -55,10 +55,13 @@ other person) are entered only in the app: say so and give the `appLink`.
      portal), **do not do it**: prepare the text and ask for an explicit yes in the chat;
    - close it with `home_answer_request` (short Markdown: what you did, what you found, what you need from them).
 2. **Links to analyse** (`toDo.linksToAnalyze`): follow the `analizza-annuncio` skill for each one.
-3. **Listings to check again** (`toDo.toRecheck`): if they are few (≤ 10) follow `aggiorna-annunci`;
+3. **Photos to look at** (`toDo.photosToCheck`, already filtered by `assistantPreferences.photos`): homes still in the running whose photos nobody has looked at one by
+   one. Follow [photos.md](../../references/photos.md) for each (favourites and newest first; if more than 5, do the
+   first 5 and propose the rest).
+4. **Listings to check again** (`toDo.toRecheck`): if they are few (≤ 10) follow `aggiorna-annunci`;
    otherwise propose it.
-4. **Geenuga Auto**: links to analyse and listings to check again from `car_overview` → the `auto` skill.
-5. **A new search**: if the last round (`lastRun`) is more than 3 days old or there never was one, propose
+5. **Geenuga Auto**: links to analyse and listings to check again from `car_overview` → the `auto` skill.
+6. **A new search**: if the last round (`lastRun`) is more than 3 days old or there never was one, propose
    `cerca-casa` (or do it, if they said "take care of it" or "do everything").
 
 **Showing a home to someone** ("send it to mum", "let Marco see it"): `home_share` (up to 4 homes; `message` in their

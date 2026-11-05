@@ -15,20 +15,26 @@ know (never invent; `null` = unknown). Notes on the Italian terms:
   order, floor plans included. The page often shows only the first few: take the full list from the gallery or the
   page data, and compare the count with the one the portal shows (e.g. «68 foto»). Then `home_save_photos` copies
   them into Geenuga, so they stay even if the listing disappears.
+- **Planimetrie** (floor plans): when the portal lists them apart, their links go in `floorPlans`, not in `photos`;
+  Geenuga adds them to the photos and marks them as floor plans. The ones you recognise by looking: see
+  [photos.md](photos.md).
 - **Coordinates**: put `lat`/`lng` when the page gives them (even approximate): Geenuga then computes the driving times
   to the family's places by itself.
 
-## Do NOT save
+## Do NOT save (unless the search includes them)
 
-- **Nuda proprietà** (bare ownership: the usufructuary keeps living there, usually for life).
-- **Multiproprietà** (timeshare).
-- **Quota / quota indivisa** (only a share of the property).
+Which cases to include is up to the family, in the search (`searchRules.alsoInclude` of `home_searches`). When they are
+included, save them with the warnings in `redFlags` and explain them in the analysis.
+
+- **Nuda proprietà** (bare ownership: the usufructuary keeps living there, usually for life) — `alsoInclude.bareOwnership`.
+- **Quota / quota indivisa** (only a share of the property) and **cessione quote** — `alsoInclude.shares`.
+- **Multiproprietà** (timeshare): not a home but a period of the year in one; never saved.
 - Anything the family wrote in their deal breakers (`dealBreaker` of the search).
 
 ## Flag (in `redFlags` and in the analysis)
 
 - **Asta** (judicial auction): official procedure, no warranty for defects, maybe occupied, 10% deposit. Save it only
-  if the search has `includeAuctions`, with `sellerType: "auction"`.
+  if `alsoInclude.auctions` is on, with `sellerType: "auction"`.
 - **Rent to buy / affitto con riscatto**: part of the rent counts towards the price; risk of losing it.
 - **Cessione quote**, **diritto di superficie**, **edilizia convenzionata / PEEP**: constraints on price and buyer.
 - **Occupato, locato**: not free at the deed.

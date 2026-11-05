@@ -9,7 +9,9 @@ generates. When a search URL works, save it on the portal with `home_set_portal`
 start from there. A saved `searchUrl` (in `home_searches` → `portals`) always wins over these patterns. Respect
 the `notes` the family wrote on each portal.
 
-Always sort by **most recent** and stop when you meet listings already in Geenuga (`home_known_links`).
+Always sort by **most recent**. How many pages to read is up to the search (`listingsToCheck` of `home_searches`): by
+default all of them, skipping without opening the listings already in Geenuga (`home_known_links`); with «new listings
+only» stop at the first ones already seen.
 
 ## Summary (for sale)
 
@@ -35,7 +37,7 @@ Names in the path are lowercase with hyphens (`san-lazzaro-di-savena`).
   description, advertiser). Coordinates may be approximate.
 - **All the photos**: in the page data (`<script id="__NEXT_DATA__">`), `props.pageProps.detailData.realEstate.properties[]`
   → `multimedia.photos[]` and `multimedia.floorplans[]`, in the listing's order. Use `urls.large`
-  (`https://pwm.im-cdn.it/image/<id>/xxl.jpg`, floor plans `https://pic.im-cdn.it/plan/<id>/xxl.jpg`). The "N foto" on
+  (`https://pwm.im-cdn.it/image/<id>/xxl.jpg`, floor plans `https://pic.im-cdn.it/plan/<id>/xxl.jpg`, which go in `floorPlans`, not in `photos`). The "N foto" on
   the page sometimes counts fewer items than the data: the data wins. "Non è presente sul nostro sito o non è più
   disponibile" = removed.
 - Since April 2026 many Immobiliare.it agency listings also appear on Subito: expect duplicates.
@@ -51,7 +53,8 @@ Names in the path are lowercase with hyphens (`san-lazzaro-di-savena`).
   QR codes or links outside `idealista.it`.
 - **All the photos**: the gallery loads only a few, but the page scripts (`adMultimediasInfo`, `fullScreenGalleryPics`)
   list them all. Look for `https://img4.idealista.it/blur/<FORMAT>/0/id.pro.it.image.master/<aa>/<bb>/<cc>/<number>.jpg`
-  and keep each `<aa>/<bb>/<cc>/<number>` once, in order of appearance (floor plans included). Save the
+  and keep each `<aa>/<bb>/<cc>/<number>` once, in order of appearance (floor plans included: if the page data marks an image as a floor plan, `plan` or
+  «planimetria», put it in `floorPlans`; otherwise you recognise it by looking, [photos.md](photos.md)). Save the
   `WEB_DETAIL_TOP-L-L` format (850 px); `WEB_DETAIL` is 1500 px and three times heavier. The "N foto" under the gallery
   may differ by one or two (floor plans). "Ci dispiace, questo annuncio non è più pubblicato" = removed.
 

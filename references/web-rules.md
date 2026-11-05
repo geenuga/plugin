@@ -73,5 +73,6 @@ no scraping services or proxies. **The family** unlocks it, in their own browser
      portal** (`home_overview` → `lastRun.blocks`, read **before** logging your round): the portal asks for a check; open
      it in the browser on this computer that has the assistant's extension, pass the check and sign in if needed; the
      next round tries again by itself, and the other portals have been checked meanwhile.
-   - **The next round catches up**: on a portal blocked in the previous round do not stop at page 1, go on (up to 3
-     pages) until you meet listings already in Geenuga.
+   - **The next round catches up**: areas you did not finish do not go in the `areas` of the log, so the next round
+     picks them up first. With a «new listings only» search, on a portal blocked in the previous round do not stop at
+     page 1, go on (up to 3 pages) until you meet listings already in Geenuga.
