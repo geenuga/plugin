@@ -63,6 +63,12 @@ other person) are entered only in the app: say so and give the `appLink`.
 5. **Geenuga Auto**: links to analyse and listings to check again from `car_overview` → the `auto` skill.
 6. **A new search**: if the last round (`lastRun`) is more than 3 days old or there never was one, propose
    `cerca-casa` (or do it, if they said "take care of it" or "do everything").
+7. **Agencies to hear from** (`home_agencies` with `followUp`): the next step is due or it's their turn. Remind the
+   family in the report, with what was planned; never contact an agency yourself without an explicit yes.
+
+**Estate agencies**: Geenuga creates and links the agency of each saved home from its `agency` field. When the family
+tells you about a contact ("Tecnocasa called, they suggest a flat at 230k"), write it with `home_agency_log`; complete
+references and agents with `home_save_agency` (relationship status, rating and notes stay theirs).
 
 **Showing a home to someone** ("send it to mum", "let Marco see it"): `home_share` (up to 4 homes; `message` in their
 words, `opinions` and `analysis` only if they want them) creates a read-only link without budget, costs or notes
