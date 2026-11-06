@@ -62,7 +62,9 @@ other person) are entered only in the app: say so and give the `appLink`.
    otherwise propose it.
 5. **Geenuga Auto**: links to analyse and listings to check again from `car_overview` → the `auto` skill.
 6. **A new search**: if the last round (`lastRun`) is more than 3 days old or there never was one, propose
-   `cerca-casa` (or do it, if they said "take care of it" or "do everything").
+   `cerca-casa` (or do it, if they said "take care of it" or "do everything"). If some portals are left behind
+   (`toDo.neglectedPortals`: never visited or late on the cadence the family chose), say so and start the search from
+   them (`home_searches` → `searchRules.portalsDue`).
 7. **Agencies to hear from** (`home_agencies` with `followUp`): the next step is due or it's their turn. Remind the
    family in the report, with what was planned; never contact an agency yourself without an explicit yes.
 8. **What to know** (the `da-sapere` skill): for the 1–3 homes that matter most (favourites or with a viewing

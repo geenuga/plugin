@@ -46,6 +46,8 @@ name**, not the neighbourhoods.
 - **Ask no questions and wait for no answers**: when a choice is not obvious, pick the most prudent one (do not save)
   and write it in the round's notes.
 - Searches: `automaticSearches` of `home_searches`. If it is empty, stop at once without writing anything.
+- Start from `searchRules.portalsDue` (see section 3): a portal left behind (`home_overview` → `toDo.neglectedPortals`)
+  is done in this round, before repeating yesterday's; if you cannot get to it, say so in the notes of the log.
 - Which listings to check is up to the search (`listingsToCheck`, see section 3): by default **all** the ones online,
   rotating through the areas; only the news if the family switched on «New listings only». How many listings to open
   per search is `searchRules.listingsPerRun`. A portal blocked in the previous round (`home_overview` → `lastRun.blocks`, read at the start) is picked
@@ -76,8 +78,9 @@ name**, not the neighbourhoods.
 - **The rules of the round**: `searchRules` of `home_searches`, all chosen by the family in the search («How Claude
   searches», or with `home_set_search`): `priceCap` (the cap, already with their price margin), `sqmFloor` (the minimum
   m² minus their margin), `listingsPerRun` (how many listings to open), `alsoInclude` (auctions, bare ownership, shares,
-  high scam risk listings), `portalOrder` (the order of the portals). **Do not add margins, limits or discards of your
-  own**: if a rule looks wrong, tell the family and suggest changing it in the search.
+  high scam risk listings), `portalOrder` (the order of the portals), `portalsDue` (portal by portal, the areas not
+  searched there for longer than the family's cadence, `portals[].everyDays`: 0 = at every round). **Do not add
+  margins, limits or discards of your own**: if a rule looks wrong, tell the family and suggest changing it in the search.
 - **Which listings to check**: `listingsToCheck` of `home_searches` (`mode`: `all` by default, `new` if the family
   switched on «New listings only» in the search, field `newListingsOnly`). It is not your choice: do not narrow down to
   the news if the search does not say so.
@@ -94,8 +97,14 @@ the built-in browser of your app. A new tab, one page at a time.
 
 ## 3. Portal by portal
 
-Portals: those in `searchRules.portalOrder`, in that order (the one searched longest ago first, so an interrupted
-round does not always leave the same ones behind; only the family's country). **Respect each portal's
+**Overdue portals first:** `searchRules.portalsDue` gives, portal by portal, the areas of R not searched there for
+longer than the family's cadence (`portals[].everyDays`), the most neglected first. Start from those, in an automatic
+round too and with «New listings only» too, before going back where you have already been: what counts is the portal,
+not the town (an area searched yesterday on the biggest portal may still be due on the agency websites). The family
+changes the cadence under each portal, on the assistant page (or you with `home_set_portal` → `everyDays`, if they ask).
+
+Then the other portals in `searchRules.portalOrder`, in that order (the one searched longest ago first, so an
+interrupted round does not always leave the same ones behind; only the family's country). **Respect each portal's
 `notes`.** For each portal and each area:
 
 1. **Search URL**: the portal's saved `searchUrl` if there is one; otherwise build it (Italy: patterns in
@@ -150,7 +159,8 @@ cloud browser; meanwhile go on with the other portals and resume the blocked one
 
 **Always**, even if you found nothing or a site blocked you: `home_log_search_run` with the search (`searchName`),
 `automatic`, the portals visited, **only** the municipalities you actually covered (`areas`: next time Geenuga starts
-from the others), pages read, listings seen, new, updated and discarded with the reasons (`reasons`), the blocks met
+from the others; if the portals did not all cover the same ones, `coverage` with the areas finished on each portal,
+otherwise `portalsDue` would count as done what you did not look at), pages read, listings seen, new, updated and discarded with the reasons (`reasons`), the blocks met
 (`blocks`), the ids of the homes created (`newIds`), the criteria used (cap, filters), the duration and short notes.
 The family gets a notification with what you searched.
 
