@@ -19,6 +19,7 @@ You need a Geenuga account (https://geenuga.com). The tools only see the data of
 | `analizza-annuncio` | Reads a listing in depth: price against the area, scam check, real costs, questions to ask, photos |
 | `aggiorna-annunci` | Checks your saved homes again: still online? price drops? |
 | `punto-situazione` | An honest summary of where you are and the next three steps |
+| `da-sapere` | What to know about a home before signing: the questions an expert would ask, the answers with their source, contradictions, the text for the agency |
 | `mutuo` | Mortgage: compares offers (monthly payment, total cost, APRC), looks up today's rates, reads the bank's ESIS (PIES), tracks the documents |
 | `auto` | Geenuga Auto: searches cars, finds the market price, checks km and scams, compares the real monthly cost and the payment options |
 

@@ -57,9 +57,11 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
 - **Trophies**: for each trophy written by hand in the searches (`trophies` with no `feature` in `home_searches`) that
   the listing lets you tell, pass `trophyChecks` (`{"Bedroom on the ground floor": true}`, `false` if it surely does not
   have it). What the listing does not say stays out («to check») and goes among the questions to ask.
-- The analysis follows the structure in [listing-terms.md](../../references/listing-terms.md): concrete and honest,
-  with the **questions to ask** the agency or the owner and what to ask to see (energy certificate, floor plan,
-  condominium fees and minutes, title of provenance).
+- The analysis follows the structure in [listing-terms.md](../../references/listing-terms.md): concrete and honest.
+- **The questions to ask** (the agency, the owner, the surveyor, and what to ask to see: energy certificate, floor
+  plan, condominium fees and minutes, title of provenance) do not go as a list in the analysis: they are the **checks
+  of the «Da sapere» dossier**. If the home suits the family, prepare the dossier as the `da-sapere` skill says
+  (`home_save_check`, and `home_add_finding` with the source for what you verify yourself).
 - Photos: `home_save_photos` with the id (the portal's floor plans go in `floorPlans` when you save the home).
 - **The photos one by one** with [photos.md](../../references/photos.md), when the family's preferences ask for it
   (`home_overview` → `assistantPreferences.photos`: `all`, or `best` for a home that looks like one of the best):

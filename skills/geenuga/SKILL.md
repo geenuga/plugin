@@ -65,6 +65,9 @@ other person) are entered only in the app: say so and give the `appLink`.
    `cerca-casa` (or do it, if they said "take care of it" or "do everything").
 7. **Agencies to hear from** (`home_agencies` with `followUp`): the next step is due or it's their turn. Remind the
    family in the report, with what was planned; never contact an agency yourself without an explicit yes.
+8. **What to know** (the `da-sapere` skill): for the 1–3 homes that matter most (favourites or with a viewing
+   scheduled) read `home_dossier`. If it is empty, offer to prepare it; if there are open blocking questions or
+   contradictions, say so calmly in the report, with the next three questions. Never insist: it is optional.
 
 **Estate agencies**: Geenuga creates and links the agency of each saved home from its `agency` field. When the family
 tells you about a contact ("Tecnocasa called, they suggest a flat at 230k"), write it with `home_agency_log`; complete
