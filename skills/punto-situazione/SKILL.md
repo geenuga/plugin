@@ -13,6 +13,7 @@ through the Geenuga tools (`home_…`). Reply in the user's language.
 
 - `home_overview` (what there is to do, the step of the path, country)
 - `home_budget` (how much they can spend, what limits it, scenarios; for rent the sustainable monthly rent)
+- `home_projects` (what each home is for: live, holiday, to let, with the family's brief)
 - `home_searches` (criteria of the main search; with `name` for the others)
 - `home_list` with `all: true` (every home, with ratings, match, costs)
 - `home_journey_guide` (the guide to the step they are at)

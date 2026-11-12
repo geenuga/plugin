@@ -54,6 +54,11 @@ other person) are entered only in the app: say so and give the `appLink`.
    - if it needs an action towards third parties (writing to an agency, booking a viewing, saving a search on a
      portal), **do not do it**: prepare the text and ask for an explicit yes in the chat;
    - close it with `home_answer_request` (short Markdown: what you did, what you found, what you need from them).
+   - **They mention you with @** (`toDo.mentions`): comments on a home where the couple writes «@Claude …». Read the
+     conversation (`home_comments`), do what they ask with the same rules as the requests and answer there, on the
+     same home, with `home_comment` (write `@Name` to bring one of them in). If the agency said someone else has
+     already made an offer (or that it is sold), add `availability` `under_offer` (or `sold`): the home's status
+     stays the couple's.
 2. **Links to analyse** (`toDo.linksToAnalyze`): follow the `analizza-annuncio` skill for each one.
 3. **Photos to look at** (`toDo.photosToCheck`, already filtered by `assistantPreferences.photos`): homes still in the running whose photos nobody has looked at one by
    one. Follow [photos.md](../../references/photos.md) for each (favourites and newest first; if more than 5, do the
@@ -70,6 +75,9 @@ other person) are entered only in the app: say so and give the `appLink`.
 8. **What to know** (the `da-sapere` skill): for the 1–3 homes that matter most (favourites or with a viewing
    scheduled) read `home_dossier`. If it is empty, offer to prepare it; if there are open blocking questions or
    contradictions, say so calmly in the report, with the next three questions. Never insist: it is optional.
+9. **Works to research** (`toDo.worksToResearch`): the works the family wrote for a home («electric gate», «bathroom
+   to redo»). Follow the `lavori` skill for each one: how it is done, the options with cost range and sources, permits and
+   bonus, steps and 3–5 suppliers near the home. Never contact a supplier without a yes.
 
 **Estate agencies**: Geenuga creates and links the agency of each saved home from its `agency` field. When the family
 tells you about a contact ("Tecnocasa called, they suggest a flat at 230k"), write it with `home_agency_log`; complete

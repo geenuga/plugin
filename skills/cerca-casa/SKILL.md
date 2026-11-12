@@ -14,7 +14,8 @@ the browser. Reply in the user's language; save titles, analyses and notes in th
 Read first: [web-rules.md](../../references/web-rules.md), [scams.md](../../references/scams.md),
 [listing-terms.md](../../references/listing-terms.md), [area-prices.md](../../references/area-prices.md); for the
 portals [portals-italy.md](../../references/portals-italy.md) if the country is Italy, otherwise
-[other-countries.md](../../references/other-countries.md).
+[other-countries.md](../../references/other-countries.md). The search's project (what the home is for) changes where
+to look and how to choose: [projects.md](../../references/projects.md).
 
 ## 0. Which search
 

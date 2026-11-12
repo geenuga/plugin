@@ -47,6 +47,8 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
    (`priceMax`) and the `contract`; if it is the same home on another portal, link it with `home_listing_checked`
    (`otherListing`) and point out differences in price or advertiser.
 4. **Does it fit them?** `home_searches` (criteria) and `home_budget` → within the criteria? within the budget?
+5. **The home's project** (`home_searches` → `project`; without a search, the main one): for a holiday home or a home
+   to let follow [projects.md](../../references/projects.md) (for letting, the «How much it earns» part of the analysis).
 
 ## 4. Save
 
