@@ -1,8 +1,8 @@
 {
   "name": "geenuga",
   "displayName": "Geenuga",
-  "version": "1.4.9",
-  "description": "Find your home and your car with your own assistant: Geenuga connects Claude to your Geenuga account (homes, searches, budget, mortgage, cars) and adds skills to search the portals, analyse a listing, spot scams and compare real costs.",
+  "version": "1.5.0",
+  "description": "Your whole life in order with your own assistant: Geenuga connects Claude to your Geenuga account (agenda, to-dos, meals, money, goals, home search, mortgage, cars) and adds skills to run your days, search the portals, analyse a listing, spot scams and compare real costs.",
   "author": {
     "name": "Geenuga",
     "email": "supporto@geenuga.com",
@@ -11,7 +11,7 @@
   "homepage": "https://geenuga.com",
   "repository": "https://github.com/geenuga/plugin",
   "license": "MIT",
-  "keywords": ["home search", "real estate", "mortgage", "rent", "car", "used cars", "budget", "italy"],
+  "keywords": ["to-do", "calendar", "meal planning", "shopping list", "budget", "goals", "home search", "real estate", "mortgage", "rent", "car", "used cars"],
   "icon": "./assets/logo.png",
   "documentationUrl": "https://geenuga.com/en/assistant",
   "supportUrl": "https://geenuga.com/en/support",
