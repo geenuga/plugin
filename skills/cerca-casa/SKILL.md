@@ -46,7 +46,7 @@ name**, not the neighbourhoods.
 
 - **Ask no questions and wait for no answers**: when a choice is not obvious, pick the most prudent one (do not save)
   and write it in the round's notes.
-- Searches: `automaticSearches` of `home_searches`. If it is empty, stop at once without writing anything.
+- Searches: `automaticSearches` of `home_searches`. If it is empty, skip the searches and go to the prices (below).
 - Start from `searchRules.portalsDue` (see section 3): a portal left behind (`home_overview` → `toDo.neglectedPortals`)
   is done in this round, before repeating yesterday's; if you cannot get to it, say so in the notes of the log.
 - Which listings to check is up to the search (`listingsToCheck`, see section 3): by default **all** the ones online,
@@ -58,8 +58,16 @@ name**, not the neighbourhoods.
   record it in `blocks` and leave the family one message in the app (once, not at every round).
 - After each search: `home_log_search_run` with `automatic: true` (always, even with nothing new: the family is
   notified that you did the round).
+- **Several searches in the same round see the same listings.** A listing that does not fit this search but fits another
+  of the family's searches (type of home, price, area) is not a discard: do not list it among the "discarded" in this
+  search's log, where the family would read it as already turned down. Put it on a line of its own ("Not for this
+  search: … → «<other search>»") and, if that search runs in the same round, let it save the home. Before logging each
+  search, read `home_known_links` again: a listing already in Geenuga Casa is never "discarded" (at most "already saved
+  with «<search>»").
 - Instead of a chat report, **a message in the app** (`home_message`) only if there is something to say (new homes,
   price drops, a site that blocked you). Nothing new → no message.
+- **Then the prices of the saved homes**: if `home_overview` → `toDo.toRecheck.count` is more than 0, follow the
+  `aggiorna-annunci` skill in automatic mode (price drops and removed listings go in the same message).
 - Close the tabs you opened.
 
 ## 1. Understand what to look for
@@ -127,7 +135,7 @@ interrupted round does not always leave the same ones behind; only the family's 
 5. **Open the listing** of the remaining candidates (at most `listingsPerRun` per search, most promising first; the others wait for the next round) and collect all the
    fields of the `home_save` schema: price, m², rooms, bedrooms, bathrooms, floor and floors, lift, energy class,
    heating, monthly fees, condition, year, features, address, area, municipality, coordinates if present, advertiser
-   (agency name), description, all the large photos (up to 100), cadastral data if given. For rent also lease type, furnished,
+   (agency name), description, all the large photos (up to 100: never cut the list to print less; check the count against the listing before saving), cadastral data if given. For rent also lease type, furnished,
    deposit and commission in months, fees included or not, available from.
 6. **Your anti-scam judgement** ([scams.md](../../references/scams.md)) → `scamRisk` and `redFlags`. Geenuga runs
    its own check too: unless `alsoInclude.highScamRisk` is on, it does not save high-risk homes (count them among the
@@ -163,7 +171,9 @@ cloud browser; meanwhile go on with the other portals and resume the blocked one
 from the others; if the portals did not all cover the same ones, `coverage` with the areas finished on each portal,
 otherwise `portalsDue` would count as done what you did not look at), pages read, listings seen, new, updated and discarded with the reasons (`reasons`), the blocks met
 (`blocks`), the ids of the homes created (`newIds`), the criteria used (cap, filters), the duration and short notes.
-The family gets a notification with what you searched.
+The family gets a notification with what you searched. "Discarded" means **only** homes that fit none of the family's
+active searches (or are scams): those outside this search but inside another one, and those already in Geenuga Casa, are
+not counted as discards and go on a separate line in the notes, with the name of the search they belong to.
 
 ## 5. Report to the family (in the chat)
 

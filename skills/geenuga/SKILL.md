@@ -67,8 +67,8 @@ other person) are entered only in the app: say so and give the `appLink`.
 3. **Photos to look at** (`toDo.photosToCheck`, already filtered by `assistantPreferences.photos`): homes still in the running whose photos nobody has looked at one by
    one. Follow [photos.md](../../references/photos.md) for each (favourites and newest first; if more than 5, do the
    first 5 and propose the rest).
-4. **Listings to check again** (`toDo.toRecheck`): if they are few (≤ 10) follow `aggiorna-annunci`;
-   otherwise propose it.
+4. **Listings to check again** (`toDo.toRecheck`, already following `assistantPreferences.priceChecks`): if they are
+   few (≤ 10) follow `aggiorna-annunci`; otherwise propose it (usually the automatic round takes care of it).
 5. **Geenuga Auto**: links to analyse and listings to check again from `car_overview` → the `auto` skill.
    **Geenuga Vita**: what is late or due today (`life_view` «today») → the `vita` skill. Say it in the report; tick,
    move or add only what they ask.

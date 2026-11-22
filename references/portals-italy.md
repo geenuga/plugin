@@ -38,7 +38,9 @@ Names in the path are lowercase with hyphens (`san-lazzaro-di-savena`).
 - **All the photos**: in the page data (`<script id="__NEXT_DATA__">`), `props.pageProps.detailData.realEstate.properties[]`
   → `multimedia.photos[]` and `multimedia.floorplans[]`, in the listing's order. Use `urls.large`
   (`https://pwm.im-cdn.it/image/<id>/xxl.jpg`, floor plans `https://pic.im-cdn.it/plan/<id>/xxl.jpg`, which go in `floorPlans`, not in `photos`). The "N foto" on
-  the page sometimes counts fewer items than the data: the data wins. "Non è presente sul nostro sito o non è più
+  the page sometimes counts fewer items than the data: the data wins. Take **all** of them: never cut the list
+  (`slice(0, N)`) to print less; if it is long, read it in chunks, and before saving check that you pass
+  `multimedia.photos.length` photos (and `multimedia.floorplans.length` floor plans). "Non è presente sul nostro sito o non è più
   disponibile" = removed.
 - Since April 2026 many Immobiliare.it agency listings also appear on Subito: expect duplicates.
 
