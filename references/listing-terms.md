@@ -18,6 +18,15 @@ know (never invent; `null` = unknown). Notes on the Italian terms:
 - **Planimetrie** (floor plans): when the portal lists them apart, their links go in `floorPlans`, not in `photos`;
   Geenuga adds them to the photos and marks them as floor plans. The ones you recognise by looking: see
   [photos.md](photos.md).
+- **Beyond the photos** (`media`): virtual tours (360°/3D), videos, «fotoPlan», virtual home staging and documents
+  attached to the listing. One item per link: `url` (the **public https link of the tour, video or document**, not the
+  listing page), `source` (`portal` when it comes from the listing's data, `assistant` when you found it), an optional
+  short `label`, and `kind` only for providers Geenuga does not know (`tour_360`, `tour_3d`, `video`, `photo_360`,
+  `floor_plan_3d`, `photo_plan`, `virtual_staging`, `document`): Getrix, Floorfy, Matterport, Kuula, Giraffe360, YouTube,
+  Vimeo and the others it recognises by itself. It is the whole list (the couple's own links stay). **Only the link**:
+  never download or copy a tour's scenes. If a tour asks for contact details or an SMS code (Nodalview does), save the
+  link and go no further. `remoteVisit`: `true` when the agency offers a remote guided viewing (video call), `false`
+  when the listing says not, left out when unknown.
 - **Coordinates**: put `lat`/`lng` when the page gives them (even approximate): Geenuga then computes the driving times
   to the family's places by itself.
 

@@ -42,6 +42,11 @@ Names in the path are lowercase with hyphens (`san-lazzaro-di-savena`).
   (`slice(0, N)`) to print less; if it is long, read it in chunks, and before saving check that you pass
   `multimedia.photos.length` photos (and `multimedia.floorplans.length` floor plans). "Non è presente sul nostro sito o non è più
   disponibile" = removed.
+- **Beyond the photos** (in `media`, [listing-terms.md](listing-terms.md)), from `multimedia` too: `virtualTours[].url`
+  (Getrix 360° tours, `https://tour360.getrix.it/vrtours/<id>/`, or other providers' links), `videos[]`, `photoPlan[]`
+  (`kind: "photo_plan"`), `homeStaging[]` (`kind: "virtual_staging"`), `documents[]` (`kind: "document"`), all with
+  `"source": "portal"`. `advertiser.agency.bookableVisit.virtualVisitEnabled` = `true` → `"remoteVisit": true`. The tour
+  opens from its link without login: do not read the scenes' JSON the viewer loads.
 - Since April 2026 many Immobiliare.it agency listings also appear on Subito: expect duplicates.
 
 ### Idealista
@@ -64,6 +69,10 @@ Names in the path are lowercase with hyphens (`san-lazzaro-di-savena`).
 
 - `https://www.casa.it/vendita/residenziale/<comune>/`, pages `?page=N`; price, m², rooms and private sellers from the
   interface. Listing: `https://www.casa.it/immobili/<8-digit id>/`.
+- **Beyond the photos**: in the listing's page data the gallery has groups («Foto», «Planimetrie», «Tour virtuale»,
+  «Mappa»); the `type: "virtualtour"` group has `type: "floorfy"` items whose `mediaid` is the tour link
+  (`https://floorfy.com/tour/<id>?src=idealista-tools`): put it in `media` with `"source": "portal"`. Each photo has
+  `aiGenerated` (`true` = made or changed with AI): flag it as `ai_edited` in the photo analysis ([photos.md](photos.md)).
 
 ### Subito
 

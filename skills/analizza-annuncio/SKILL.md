@@ -65,6 +65,9 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
   of the «Da sapere» dossier**. If the home suits the family, prepare the dossier as the `da-sapere` skill says
   (`home_save_check`, and `home_add_finding` with the source for what you verify yourself).
 - Photos: `home_save_photos` with the id (the portal's floor plans go in `floorPlans` when you save the home).
+- **Beyond the photos**: the listing's virtual tours, videos, «fotoPlan», home staging and documents go in `media`, and
+  `remoteVisit` when the agency offers remote viewings, when you save the home
+  ([listing-terms.md](../../references/listing-terms.md)). Only the links: never copy a tour's scenes.
 - **The photos one by one** with [photos.md](../../references/photos.md), when the family's preferences ask for it
   (`home_overview` → `assistantPreferences.photos`: `all`, or `best` for a home that looks like one of the best):
   `home_photos`, look at every photo and every

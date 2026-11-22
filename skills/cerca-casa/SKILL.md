@@ -142,8 +142,8 @@ interrupted round does not always leave the same ones behind; only the family's 
    discarded and mention them in the report); when it is on, they are saved with their red flags, and in the report
    you remind the family never to send money or documents.
 7. **Area price** ([area-prices.md](../../references/area-prices.md)): once per area per session → `areaPricePerSqm`; the town's official values are already in `home_zone_prices`.
-8. **Save** with `home_save` (up to 10 homes per call, `search` = the name of R), with all the data, the photo links
-   and, for the best ones, the `analysis` (structure in [listing-terms.md](../../references/listing-terms.md)). Handle
+8. **Save** with `home_save` (up to 10 homes per call, `search` = the name of R), with all the data, the photo links, the
+   tour, video and document links in `media` and, for the best ones, the `analysis` (structure in [listing-terms.md](../../references/listing-terms.md)). Handle
    the outcomes (`outcome`):
    - `possible_duplicate` → if it is the same home, `home_listing_checked` with `otherListing` (and say if the
      price differs!); if it is a different one, repeat with `force`;
