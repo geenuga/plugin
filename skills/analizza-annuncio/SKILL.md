@@ -76,6 +76,14 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
   questions to ask at the viewing.
 - Then `home_details` with the id: it gives the real costs computed by Geenuga (cash needed, monthly payment and costs;
   for rent the money to move in and the monthly spend), the comparison with the area, the match and the driving times.
+- **The ground**: a few seconds after saving, `home_details` → `home.ground` describes the ground around the home's
+  point (Geenuga computes it; you never write it): `shape` (metres above or below the surroundings in `vsMean1000`,
+  `drainageDistance` and `aboveDrainage` for the nearest drainage line, `closedBasin`), `wet` (wet ground seen by
+  satellite within 250 m, 500 m and 1 km) and, in Italy, `hazard` (mapped landslide and flood hazard). When it flags
+  something (within 150 m of a drainage line and less than 5 m above it, a closed basin, wet ground within 500 m, a
+  mapped hazard), put it among the doubts with the question to ask (ventilated crawl space, water after rain, wall
+  moisture readings, the municipality's planning certificate). It says where to look, not that the home is damp, and
+  the point is often the listing's approximate one: say so.
 
 ## 5. Answer
 
