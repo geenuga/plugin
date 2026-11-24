@@ -84,6 +84,15 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
   mapped hazard), put it among the doubts with the question to ask (ventilated crawl space, water after rain, wall
   moisture readings, the municipality's planning certificate). It says where to look, not that the home is damp, and
   the point is often the listing's approximate one: say so.
+- **The climate of the area**: the same `home_details` → `climate` (null where Geenuga has no data) says what the air
+  of the area is like at the home's elevation, from ten-year means of the ERA5-Land model: `humidHoursPct` (hours with
+  relative humidity of 90% or more, year and winter), `relativeHumidityPct`, `winterAir` (the humidity winter air
+  would have warmed to 20 °C: usually 30–45%, so much more than that in a heated home comes from inside or from the
+  building), `temperatureC`, `heatingDegreeDays` and `air` (`humid`, `average`, `dry` against the towns of the country
+  in `country`). When `air` is `humid`, put it among the doubts with what to look at during the viewing (north-facing
+  walls, cellar and unheated rooms, windows, how the home is heated and aired); it weighs more when `home.ground`
+  flags something too. Give the figures with their source and period. It is a model with a 9 km grid: it says what the
+  air outside is like, not that the home is damp, and it does not see a valley floor or a hollow (`home.ground` does).
 
 ## 5. Answer
 
