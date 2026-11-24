@@ -43,7 +43,12 @@ a home once or twice in a lifetime: they do not know what they do not know. Your
 
 1. **Read**: `home_dossier` and `home_details` (listing, analysis, costs). The home may come as an id, an app link or a
    listing link (`home_known_links`).
-2. **If the dossier is empty, prepare it.** From the home's features choose what matters (condominium or private
+2. **If the dossier is empty, prepare it.** First the **ready-made lists**: `home_dossier` → `packs` holds the
+   questions written and verified by Geenuga (for now `humidity`). A `proposed` list (Geenuga suggests it from the
+   data of the home and of the area, with the reasons in `reasons`) is added with `home_activate_pack` instead of
+   writing those questions yourself. If the dossier already holds a question that asks the same thing as an item,
+   link it (`existing: { itemKey: checkId }`) instead of adding a duplicate. Then from the home's features choose what
+   matters (condominium or private
    consortium, inside a park or with constraints, isolated, large garden, no energy certificate, to renovate, auction,
    rent…) and add 6 to 12 checks with `home_save_check`: `title` as one would say it, `why` in half a line, `askWho`,
    `moment`, `weight` (`potential_blocker` only for what can really stop the purchase: compliance, unauthorised works,
@@ -62,6 +67,30 @@ a home once or twice in a lifetime: they do not know what they do not know. Your
    family as it is.
 7. **Reply in the chat** in a few lines: how well they know the home (level and percent), what you added or closed, the
    contradictions, the next three questions and the `appLink` of the «Da sapere» page.
+
+## The «humidity» list
+
+The area data (`home_details` → `climate` and `home.ground`) says where to look, not whether the home is damp: that
+comes from the people who live there and two measurements. The list carries those questions, each with what a
+reassuring and a worrying answer look like.
+
+- **When**: Geenuga proposes it when the home touches the ground (a whole house, ground floor, basement), when the
+  air of the area is more humid than in three towns out of four, or when the ground shows water nearby. If you saw
+  signs of damp in the photos (stains, flaking plaster at the base of the walls, a dehumidifier), add it even when it
+  is only `available`, and save what you saw as a fact, with the photos as the source.
+- **The vapour sum**: when the family gives you the hygrometer readings (temperature and humidity inside and outside,
+  at the same time), `home_humidity_reading` does the sum (`livedIn: false` for a closed, empty home): never do it
+  yourself. Save the returned `text` with `home_add_finding` on the hygrometer check (`packItem` `hygrometer`):
+  `kind: "fact"`, `sourceKind: "visit"`, who measured and with what in `sourceLabel`, `outcome` = `suggestedOutcome`.
+  With 15 °C or more outside (`too_warm`) the reading says nothing: it must be repeated on a cold day.
+- **Radon** starts as `curiosity`, because the list does not know where it is high. Look for the official map of the
+  region or the country (the radiation-protection authority): if the area is among those with more homes above the
+  reference level, raise the weight to `important` (`home_save_check`) and save what you read as a fact, with its
+  source. How long an official measurement takes depends on the country (three months to a year).
+- **These are indications, never a verdict.** The limits of the sum are those used by building designers (EN ISO
+  13788), and a hygrometer is off by a few points. Walls and floor are for a professional: say so, and prepare their
+  questions.
+- Items the family removed stay removed.
 
 ## Do not
 

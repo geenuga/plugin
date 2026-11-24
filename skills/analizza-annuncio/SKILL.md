@@ -63,7 +63,9 @@ of [scams.md](../../references/scams.md) and the area rent in €/m² per month.
 - **The questions to ask** (the agency, the owner, the surveyor, and what to ask to see: energy certificate, floor
   plan, condominium fees and minutes, title of provenance) do not go as a list in the analysis: they are the **checks
   of the «Da sapere» dossier**. If the home suits the family, prepare the dossier as the `da-sapere` skill says
-  (`home_save_check`, and `home_add_finding` with the source for what you verify yourself).
+  (`home_save_check`, and `home_add_finding` with the source for what you verify yourself). If `home_dossier` →
+  `packs` proposes a ready-made list (for now `humidity`, when the home touches the ground or `climate` and
+  `home.ground` point to damp), add it with `home_activate_pack` instead of writing those questions yourself.
 - Photos: `home_save_photos` with the id (the portal's floor plans go in `floorPlans` when you save the home).
 - **Beyond the photos**: the listing's virtual tours, videos, «fotoPlan», home staging and documents go in `media`, and
   `remoteVisit` when the agency offers remote viewings, when you save the home
